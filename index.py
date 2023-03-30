@@ -11,22 +11,25 @@ def get_receita(receita):
     soup = BeautifulSoup(response.content, 'html.parser')
 
     receita = {}
-
+    
+    # Buscar dados
     try:
-        # Buscar dados
         receita['nome'] = soup.find('h1').text.strip()
         [receita['rendimento'], receita['tempo']] = [x.text.strip() for x in soup.find('div', {'class': 'info-recipe'}).find_all('span', limit=2)]
         receita['ingredientes'] = [x.text.strip() for x in soup.find("div", attrs={"class": "ingredientes"}).find_all("label")]
-        receita['modo_preparo'] = [x.text.strip() for x in soup.find("ol", attrs={"class": "lista-preparo-1"}).find_all("span")]
-        receita['dicas'] = [x.text.strip() for x in soup.find("div", attrs={"class": 'infosadicionais'}).find_all("p")]
         
-        return receita
+        try:
+            receita['modo_preparo'] = [x.text.strip() for x in soup.find("ol", attrs={"class": "lista-preparo-1"}).find_all("span")]
+        except Exception:
+            receita['modo_preparo'] = [x.text.strip() for x in soup.find("div", attrs={"class": "preparo"}).find("ol", attrs={"class": "noimg"}).find_all("li")]
+        receita['dicas'] = [x.text.strip() for x in soup.find("div", attrs={"class": 'infosadicionais'}).find_all("p")]
     except Exception:
-        raise Exception('Possivelmente essa receita não está na base de dados, tente outra.')
+        return False
+
+    return receita
     
 
 def write_receita(receita):
-
     # Escrever no arquivo receita.md
     with open('receita.md', 'w', encoding='utf-8') as f:
         f.write('# {}\n\n'.format(receita['nome']))
@@ -49,4 +52,7 @@ def write_receita(receita):
 
 if __name__ == '__main__':
     receita = get_receita(input('Escolha uma receita: '))
-    write_receita(receita)
+    if receita:
+        write_receita(receita)
+    else:
+        print('Possivelmente essa receita não está na base de dados, tente outra.')
