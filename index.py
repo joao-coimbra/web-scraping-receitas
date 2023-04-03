@@ -10,7 +10,7 @@ async def options(request):
     response = json({"status": "ok"})
     response.headers["Access-Control-Allow-Origin"] = "*"
     response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-    response.headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     return response
 
 @app.route('/api/receita', methods=['POST'])
