@@ -77,7 +77,7 @@ export default function Home() {
 
 	const getReceitas = useCallback(async (search: string) => {
 		let res = await fetch(
-			"https://api-receitas-web-scraping.vercel.app/api/receita",
+			"https://api-receitas-web-scraping.vercel.app/receita",
 			{
 				method: "POST",
 				headers: {
@@ -152,7 +152,7 @@ export default function Home() {
 						</p>
 					</div>
 
-					<div>
+					<div className="inline-flex space-x-1">
 						<Link
 							href='https://github.com/joao-coimbra/web-scraping-receitas'
 							target='_blank'
@@ -179,6 +179,14 @@ export default function Home() {
 								</svg>
 							</div>
 							<span className='font-medium'>GitHub</span>
+						</Link>
+
+						<Link
+							href='https://github.com/joao-coimbra/web-scraping-receitas/tree/api'
+							target='_blank'
+							className='grid place-items-center space-x-2 rounded-lg border border-slate-100 bg-teal-500 px-3 py-2 text-sm font-thin text-gray-100 duration-75 hover:bg-teal-400'
+						>
+							<span className='font-semibold font-mono'>API</span>
 						</Link>
 					</div>
 				</div>
