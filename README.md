@@ -18,7 +18,7 @@ Web scraping é a técnica de extrair informações de sites de forma automatiza
 
 ## Página de receitas
 
-Para este projeto, escolhemos a página [receitaria](https://receitaria.com.br), que contém diversas receitas de culinária. Iremos incluir informações como título da receita, ingredientes, modo de preparo, tempo de preparo, número de porções, entre outros.
+Para este projeto, escolhemos a página [receiteria](https://receiteria.com.br), que contém diversas receitas de culinária. Iremos incluir informações como título da receita, ingredientes, modo de preparo, tempo de preparo, número de porções, entre outros.
 
 ## :zap: Tecnologias
 
