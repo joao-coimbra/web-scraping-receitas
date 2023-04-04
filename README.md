@@ -9,7 +9,7 @@ API utilizada no [site](https://web-scraping-receitas.vercel.app) para busca de 
 -   [Resume](#pushpin-resume)
 -   [Technology](#zap-technology)
 -   [Endpoints](#round_pushpin-endpoints)
-    1.   [Receita](#receita)
+    1.  [Receita](#receita)
 -   [Usage](#hammer_and_wrench-usage)
 -   [Authors](#gem-authors)
 -   [License](#scroll-license)
@@ -26,21 +26,21 @@ Technology used within the project:
 
 ### Addition
 
-Takes search and returns the recipe.
+Takes recipe and returns the infos.
 
 ```http
 POST /api/receita
 ```
 
-| Parameter | Type     | Description                  |
-| :-------- | :------- | :--------------------------- |
+| Parameter | Type     | Description          |
+| :-------- | :------- | :------------------- |
 | `search`  | `string` | **Required**. recipe |
 
 Request Body:
 
 ```json
 {
-  "search": "lasanha"
+	"search": "lasanha"
 }
 ```
 
@@ -55,8 +55,8 @@ Response Body:
 	"ingredientes": [
 		"100 gramas de farinha de arroz",
 		"3 gramas de goma xantana",
-    "..."
-  ],
+		"..."
+	],
 	"modo_preparo": [
 		"Prepare o molho bolonhesa da forma que desejar e reserve.",
 		"Em uma tigela, misture a farinha de arroz, o polvilho doce, a fécula de batata, a goma xantana e o sal.",
@@ -72,11 +72,11 @@ Response Body:
 
 ## :hammer_and_wrench: Usage
 
-To use this API, you can send HTTP requests to the appropriate endpoints. For example, to get a recipe, you can send a ***POST*** request to the _/api/receita_ endpoint with a JSON body like this:
+To use this API, you can send HTTP requests to the appropriate endpoints. For example, to get a recipe, you can send a **_POST_** request to the _/api/receita_ endpoint with a JSON body like this:
 
 ```json
 {
-  "search": "cream cheese"
+	"search": "cream cheese"
 }
 ```
 
@@ -92,7 +92,7 @@ And the API will respond with a JSON body like this:
 		"3 colheres de sopa de vinagre branco",
 		"50 gramas de manteiga sem sal (em ponto de pomada)",
 		"200 gramas de creme de leite (com mais de 20% de gordura)",
-		"1\/2 colher de chá de sal"
+		"1/2 colher de chá de sal"
 	],
 	"modo_preparo": [
 		"Reúna todos os ingredientes;",
