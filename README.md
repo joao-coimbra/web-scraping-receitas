@@ -45,7 +45,7 @@ Tecnologias usadas no projeto:
 3. Inicie o server:
 
     ```bash
-    python index.py
+    python -m index.py
     ```
 
 4. For fim digite uma receita que deseja no prompt
