@@ -29,7 +29,7 @@ Technology used within the project:
 Takes recipe and returns the infos.
 
 ```http
-POST /api/receita
+POST /receita
 ```
 
 | Parameter | Type     | Description          |
