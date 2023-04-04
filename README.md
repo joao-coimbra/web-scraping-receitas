@@ -22,9 +22,11 @@ Technology used within the project:
 
 ## :round_pushpin: Endpoints
 
+`https://api-receitas-web-scraping.vercel.app/`
+
 ### Addition
 
-Takes recipe and returns the infos.
+Takes search and returns the recipe.
 
 ```http
 POST /api/receita
